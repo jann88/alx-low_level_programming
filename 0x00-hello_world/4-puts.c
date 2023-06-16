@@ -1,8 +1,8 @@
 #include <stdio.h>
 /**
- * Main - Prints a sentense followed by a new line
- * Description for main:- Prints a sentense using the puts function
- * Return: This returns 0 (success)
+ * main - Entry point
+ * prints a sentense with the puts function
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
