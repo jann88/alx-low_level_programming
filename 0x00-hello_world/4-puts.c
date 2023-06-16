@@ -1,15 +1,11 @@
 #include <stdio.h>
 /**
- * main - a c program that prints a text with the 'puts function' keyword 
- *
- * return should be 0 (success)
+ * Main - Prints a sentense followed by a new line
+ * Description for main:- Prints a sentense using the puts function
+ * Return: This returns 0 (success)
  */
-
 int main(void)
 {
-	char myStr[] = 'Programming is like building a multilingual puzzle';
-
-	puts(mySrt\n);
-
+	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
 }
