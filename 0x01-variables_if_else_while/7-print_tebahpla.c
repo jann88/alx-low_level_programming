@@ -2,17 +2,20 @@
 #include <time.h>
 /**
  * main - Entry level
- * prints single digit numbers of base 10 using putchar
+ * prints lowercase alphabets in reverse
  * Return: 0 (success)
  */
 int main(void)
 {
-	int i;
+	char c = 'z';
 
-	for (i = 48; i < 58; i++)
+	while (c >= 'a')
 	{
-		putchar(i);
+		putchar(c);
+
+		c--;
 	}
 	putchar('\n');
 	return (0);
 }
+
