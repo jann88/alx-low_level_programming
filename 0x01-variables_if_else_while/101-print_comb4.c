@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-	int i = '0';
+	int i;
 
-	int j = '0';
+	int j;
 
-	int k = '0';
+	int k;
 
 	for (i = 0; i < 9; i++)
 	{
@@ -25,6 +25,12 @@ int main(void)
 					putchar(i);
 					putchar(j);
 					putchar(k);
+				}
+				else
+				{
+					putchar('\n');
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
