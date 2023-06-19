@@ -33,11 +33,11 @@ int main(void)
 					putchar(',');
 					putchar(' ');
 				}
+				j++;
 			}
-			j++;
 		}
 		j = '1';
-		i = '0';
+
 		i++;
 	}
 	return (0);
