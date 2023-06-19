@@ -12,33 +12,24 @@
  */
 int main(void)
 {
-	int i = '0';
+	int i, j;
 
-	int j = '1';
-
-	while (i <= '9')
+	for (i = 48; i <= 56; i++)
 	{
-		while (j <= '9')
+		for (j = 49; j <= 57; j++)
 		{
-			if (!(i > j) || i == j)
+			if (j > i)
 			{
 				putchar(i);
 				putchar(j);
-				if (i == '8' && j == '9')
-				{
-					putchar('\n');
-				}
-				else
+				if (i != 56 || j != 57)
 				{
 					putchar(',');
 					putchar(' ');
 				}
 			}
-			j++;
 		}
-		j = '2';
-		
-		i++;
 	}
+	putchar('\n');
 	return (0);
 }
