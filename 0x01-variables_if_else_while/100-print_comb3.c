@@ -20,7 +20,7 @@ int main(void)
 	{
 		while (j <= '9')
 		{
-			if (!(i > j) || (i == j))
+			if (!(i > j) || i == j)
 			{
 				putchar(i);
 				putchar(j);
@@ -36,8 +36,8 @@ int main(void)
 			}
 			j++;
 		}
-		j = '1';
-
+		j = '2';
+		
 		i++;
 	}
 	return (0);
