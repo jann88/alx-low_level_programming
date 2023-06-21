@@ -8,25 +8,44 @@
  */
 int main(void)
 {
-	int count;
-	unsigned long fibo1 = 0, fibo2 = 1, sum;
+	int c, boolean, boolean2;
+	long int n1, n2, fn, fn2, n11, n22;
 
-	for (count = 0; count <= 98; count++)
+	n1 = 1;
+	n2 = 2;
+	boolean =  boolean2 = 1;
+	printf("%ld, %ld", n1, n2);
+	for (c = 0; c < 96; c++)
 	{
-		sum = fibo1 + fibo2;
-		printf("%lu", sum);
-
-		fibo1 = fibo1 + fibo2;
-		fibo2 = sum;
-		if (count == 97)
+		if (boolean)
 		{
-			printf("\n");
-
+			fn = n1 + n2;
+			printf(", %ld", fn);
+			n1 = n2;
+			n2 = fn;
 		}
 		else
 		{
-			printf(", ");
+			if (boolean2)
+			{
+				n11 = n1 % 1000000000;
+				n22 = n2 % 1000000000;
+				n1 = n1 / 1000000000;
+				n2 = n2 / 1000000000;
+				boolean2 = 0;
+			}
+			fn2 = (n11 + n22);
+			fn = n1 + n2 + (fn2 / 1000000000);
+			printf(", %ld", fn);
+			printf("%ld", fn2 % 1000000000);
+			n1 = n2;
+			n11 = n22;
+			n2 = fn;
+			n22 = (fn2 % 1000000000);
 		}
+		if (((n1 + n2) < 0) && boolean == 1)
+			boolean = 0;
 	}
+	printf("\n");
 	return (0);
 }
