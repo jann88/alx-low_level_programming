@@ -10,7 +10,7 @@ void rev_string(char *s)
 	char reverse = s[0];
 	int c = 0;
 	int i;
-	
+
 	while (s[c] != '\0')
 	{
 		c++;
@@ -20,6 +20,6 @@ void rev_string(char *s)
 		c--;
 		reverse = s[i];
 		s[i] = s[c];
-		s[c] = reverse
+		s[c] = reverse;
 	}
 }
