@@ -1,9 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * *_strcat - concancates a string
+ * _strcat - concancates a string
  * @dest - pointer to destination input
- * @src - pointer to source input 
+ * @src - pointer to source input
+ * Return: pointer to destination string 
  */
 char *_strcat(char *dest, char *src)
 {
@@ -14,9 +15,10 @@ char *_strcat(char *dest, char *src)
 	{
 		i++;
 	}
-	for (j = 0;src[j]; j++)
+	for (j = 0; src[j] != '\0'; j++, i++)
 	{
-		dest[i++] = src[j];
+		dest[i] = src[j];
 	}
+	dest[i] = '\0';
 	return (dest);
 }
