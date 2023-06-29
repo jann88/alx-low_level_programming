@@ -2,9 +2,9 @@
 #include <stdio.h>
 /**
  * _strcat - concancates a string
- * @dest - pointer to destination input
- * @src - pointer to source input
- * Return: pointer to destination string 
+ * * @dest: pointer to destination input
+ * @src: pointer to source input
+ * Return: pointer to destination string
  */
 char *_strcat(char *dest, char *src)
 {
@@ -23,7 +23,6 @@ char *_strcat(char *dest, char *src)
 		i++;
 		j++;
 	}
-
 	dest[i] = '\0';
 	return (dest);
 }
