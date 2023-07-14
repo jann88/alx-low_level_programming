@@ -19,16 +19,21 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	/*get the number of elements for the array*/
 	n = size;
 	i = nmemb;
+	/*check if array id not null*/
+	if (n == 0 || i == 0)
+	{
+		return (NULL);
+	}
 
 	/*dynamically allocate memory using calloc function*/
-	ptr = (char *)calloc(n, sizeof(char));
+	ptr = (char *)calloc(i * n, sizeof(char));
 	/*check if memory has been allocated correctly*/
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
 	/*get elements of the array*/
-	for (i = 0; i < n; i++)
+	for (i = 0; i < (i * n); i++)
 	{
 		ptr[i] = i + 1;
 	}
