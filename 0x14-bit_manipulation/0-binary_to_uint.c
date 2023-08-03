@@ -12,14 +12,18 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int slen = strlen(b);
 	unsigned int total = 0;
 	unsigned int decval = 1;
-	unsigned int i;
+	int i;
 
-	if (b != 0 || b != 1 || b == NULL)
+	if (b == NULL)
 	{
 		return (0);
 	}
-	for (i = (slen - 1); i > 0; i--)
+	for (i = (slen - 1); i >= 0; i--)
 	{
+		if (b[i] != '0' && b[i] != '1')
+		{
+			return (0);
+		}
 		if (b[i] == '1')
 		{
 			total += decval;
