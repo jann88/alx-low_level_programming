@@ -7,15 +7,12 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int mask = 1 << index;
+	unsigned int bitVal;
 
-	unsigned int total = n & mask;
-
-	if (total == 0)
+	if (index > 63)
 	{
-		return (0);
+		return (-1);
 	}
-	else
-	{
-		return (1);
-	}
+	bitVal = (n >> index) & 1;
+	return (bitVal);
+}
