@@ -20,13 +20,13 @@ unsigned int binary_to_uint(const char *b)
 	{
 		char ch = b[i];
 
-		if (ch == '1')
-		{
-			total = (total << 1) | 1;
-		}
-		else if (ch == '0')
+		if (ch == '0')
 		{
 			total = total << 1;
+		}
+		else if (ch == '1')
+		{
+			total = (total << 1) | 1;
 		}
 		else
 			return (0);
