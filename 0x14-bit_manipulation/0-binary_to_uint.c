@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stddef.h>
-#include <string.h>
 /**
  * binary_to_uint - a function converts binary to unsigned integer
  * @b: a pointer to binary codes
@@ -29,7 +27,9 @@ unsigned int binary_to_uint(const char *b)
 			total = (total << 1) | 1;
 		}
 		else
+		{
 			return (0);
+		}
 	}
 	return (total);
 }
