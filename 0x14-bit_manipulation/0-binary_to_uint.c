@@ -9,26 +9,27 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int slen = strlen(b);
 	unsigned int total = 0;
-	unsigned int decval = 1;
 	int i;
 
 	if (b == NULL)
 	{
 		return (0);
 	}
-	for (i = slen - 1; i >= 0; i--)
+	for (i = 0; b[i] != 0; i++)
 	{
-		if ((b[i] != '0') && (b[i] != '1'))
+		char ch = b[i];
+
+		if (ch == '1')
 		{
+			total = (total << 1) | 1;
+		}
+		else if (ch == '0')
+		{
+			total = total << 1;
+		}
+		else
 			return (0);
-		}
-		if ((b[i] == '1'))
-		{
-			total |= decval;
-		}
-		decval <<= 1;
 	}
 	return (total);
 }
