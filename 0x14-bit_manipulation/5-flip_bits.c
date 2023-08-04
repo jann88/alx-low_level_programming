@@ -5,6 +5,7 @@
  * @n: first number to compare
  * @m: second number to compare
  * Do not use operators
+ * Return: number of bits
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
