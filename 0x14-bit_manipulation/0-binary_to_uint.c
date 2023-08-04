@@ -24,11 +24,11 @@ unsigned int binary_to_uint(const char *b)
 		{
 			return (0);
 		}
-		if (b[i] == '1')
+		if ((b[i] == '1'))
 		{
-			total += decval;
+			total |= decval;
 		}
-		 decval = decval << 1;
+		decval <<= 1;
 	}
 	return (total);
 }
