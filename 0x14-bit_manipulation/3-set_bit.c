@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * set_bit - sets the value of a bit to 1 at a given index
- * @n: the given bit code
+ * @n: pointer to the given bit code
  * @index: the bit to be set
  * Returns: 1 if it works and -1 if it fails
  */
