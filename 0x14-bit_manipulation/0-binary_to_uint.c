@@ -28,7 +28,7 @@ unsigned int binary_to_uint(const char *b)
 		{
 			total += decval;
 		}
-		 decval *= 2;
+		 decval = decval << 1;
 	}
 	return (total);
 }
