@@ -53,9 +53,13 @@ int main(int argc, char *argv[])
 	}
 	file_from = close(file_from);
 	file_to = close(file_to);
-	if ((file_from == -1) || (file_to == -1))
+	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, ERR_NOCLOSE, ((file_from) || (file_to)), exit(100);
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, file_from), exit(100);
+	}
+	if (file_to == -1)
+	{
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, file_to) ,exit(100);
 	}
 	return (EXIT_SUCCESS);
 }
