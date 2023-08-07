@@ -44,21 +44,18 @@ int main(int argc, char *argv[])
 	{
 		if (write(file_to, buf, bytes) != bytes)
 		{
-			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]);
-			exit(99);
+			dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
 		}
 		if (bytes == -1)
 		{
-			dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]);
-			exit(98);
+			dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
 		}
 	}
 	file_from = close(file_from);
 	file_to = close(file_to);
-	if ((!file_from) && (!file_to))
+	if ((file_from) || (file_to))
 	{
-		dprintf(STDERR_FILENO, ERR_NOCLOSE, file_from);
-		exit(100);
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, file_from), exit(100);
 	}
 	return (0);
 }
