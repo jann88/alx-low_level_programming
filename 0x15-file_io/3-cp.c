@@ -16,9 +16,9 @@
  *
  * Return: 1 on success, 0 on failure
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv[])
 {
-	ssize_t bytes;
+	ssize_t bytes = 0;
 	int file_from = 0;
 	int file_to = 0;
 	char buf[BUFF_SIZE];
@@ -51,7 +51,6 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
 		}
 	}
-	free(buf);
 	file_from = close(file_from);
 	file_to = close(file_to);
 	if ((file_from) || (file_to))
