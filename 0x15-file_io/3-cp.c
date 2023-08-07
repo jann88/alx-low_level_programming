@@ -16,26 +16,11 @@
  *
  * Return: 1 on success, 0 on failure
  */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	if (!s)
-	{
-		return (0);
-	}
-	while (*s++)
-	{
-		i++;
-	}
-	return (i);
-}
 int main(int argc, char *argv[])
 {
-	ssize_t bytes = 0;
-	int file_from;
-	int file_to;
-	/*int len;*/
+	ssize_t bytes;
+	int file_from = 0;
+	int file_to = 0;
 	char buf[BUFF_SIZE];
 
 	if (argc != 3)
@@ -43,7 +28,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, USAGE);
 		exit(97);
 	}
-	/*len = _strlen(argv[1]);*/
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
@@ -68,9 +52,10 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]);
 			exit(98);
 		}
-		file_from = close(file_from);
 	}
-	if ((file_from) && (file_to))
+	file_from = close(file_from);
+	file_to = close(file_to);
+	if ((!file_from) && (!file_to))
 	{
 		dprintf(STDERR_FILENO, ERR_NOCLOSE, file_from);
 		exit(100);
