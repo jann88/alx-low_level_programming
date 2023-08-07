@@ -51,6 +51,7 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
 		}
 	}
+	free(buf);
 	file_from = close(file_from);
 	file_to = close(file_to);
 	if ((file_from) || (file_to))
