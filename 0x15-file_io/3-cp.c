@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]);
 		exit(99);
 	}
+	bytes = 1;
 	while ((bytes = read(file_from, buf, BUFF_SIZE)) > 0)
 	{
 		if (write(file_to, buf, bytes) != bytes)
