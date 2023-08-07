@@ -24,21 +24,16 @@ int main(int argc, char *argv[])
 	char buf[BUFF_SIZE];
 
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, USAGE);
-		exit(97);
-	}
+		dprintf(STDERR_FILENO, USAGE), exit(97);
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]);
-		exit(98);
+		dprintf(STDERR_FILENO, ERR_NOREAD, argv[1]), exit(98);
 	}
 	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, PERMISSIONS);
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]);
-		exit(99);
+		dprintf(STDERR_FILENO, ERR_NOWRITE, argv[2]), exit(99);
 	}
 	while ((bytes = read(file_from, buf, BUFF_SIZE)) > 0)
 	{
@@ -59,7 +54,7 @@ int main(int argc, char *argv[])
 	}
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, ERR_NOCLOSE, file_to) ,exit(100);
+		dprintf(STDERR_FILENO, ERR_NOCLOSE, file_to), exit(100);
 	}
 	return (EXIT_SUCCESS);
 }
