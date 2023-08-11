@@ -16,7 +16,7 @@
  *
  * Return: 1 on success, 0 on failure
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	ssize_t bytes = 0;
 	int file_from = 0;
