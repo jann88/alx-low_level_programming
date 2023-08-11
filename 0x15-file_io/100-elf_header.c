@@ -109,8 +109,9 @@ void print_osabi(Elf64_Ehdr h)
 		case ELFOSABI_FREEBSD:
 			printf("UNIX - TRU64");
 			break;
-		default: print_osabi_more(h);
-			 break;
+		default:
+			print_osabi_more(h);
+			break;
 	}
 	printf("\n");
 }
@@ -145,7 +146,7 @@ void print_osabi_more(Elf64_Ehdr h)
  */
 void print_abiversion(Elf64_Ehdr h)
 {
-	printf("ABI Version: 			%d\n",
+	printf("ABI Version:			%d\n",
 		h.e_ident[EI_ABIVERSION]);
 }
 /**
@@ -158,8 +159,8 @@ void print_type(Elf64_Ehdr h)
 	int i = 0;
 
 	printf(" Type:					");
-	if (h.e_ident[EI_DATA] == ELFDATA2MSB)
-		i = 1;;
+	if ((h.e_ident[EI_DATA]) == ELFDATA2MSB)
+		i = 1;
 	switch (p[i])
 	{
 		case ET_NONE:
