@@ -11,9 +11,9 @@ void print_magic(Elf64_Ehdr h)
 {
 	int i;
 
-	printf(" Magic:	");
-	for (i = 0; i < EI_NIDENT ; i++)
-		printf("%2.2x%s", h.e_ident[i], i == EI_NIDENT  - 1 ? "\n" : "");
+	printf(" Magic:	 ");
+	for (i = 0; i < EI_NIDENT; i++)
+		printf("%2.2x%s", h.e_ident[i], i == EI_NIDENT  - 1 ? "\n" : " ");
 }
 /**
  * print_class - prints ELF class
@@ -107,6 +107,9 @@ void print_osabi(Elf64_Ehdr h)
 			printf("UNIX - IRIX");
 			break;
 		case ELFOSABI_FREEBSD:
+			printf("UNIX - FreeBSD");
+			break;
+		case ELFOSABI_TRU64:
 			printf("UNIX - TRU64");
 			break;
 		default:
@@ -124,7 +127,7 @@ void print_osabi_more(Elf64_Ehdr h)
 	switch (h.e_ident[EI_OSABI])
 	{
 		case ELFOSABI_MODESTO:
-			printf("Nove11 - Modesto");
+			printf("Novell - Modesto");
 			break;
 		case ELFOSABI_OPENBSD:
 			printf("UNIX - OpenBSD");
@@ -167,7 +170,7 @@ void print_type(Elf64_Ehdr h)
 			printf("NONE (None)");
 			break;
 		case ET_REL:
-			printf("Rel (Relocatable file)");
+			printf("REL (Relocatable file)");
 			break;
 		case ET_EXEC:
 			printf("EXEC (Executable file)");
