@@ -21,10 +21,12 @@ unsigned int binary_to_uint(const char *b)
 		if (ch == '0')
 		{
 			result = result << 1;
-		} else if (ch == '1')
+		}
+		else if (ch == '1')
 		{
-			total = (total << 1) | 1;
-		} else
+			result = (result << 1) | 1;
+		}
+		else
 		{
 			return (0);
 		}
