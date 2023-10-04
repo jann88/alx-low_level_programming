@@ -7,7 +7,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int total = 0;
+	unsigned int result = 0;
 	size_t i;
 
 	if (b == NULL)
@@ -17,17 +17,11 @@ unsigned int binary_to_uint(const char *b)
 		char ch = b[i];
 
 		if (ch == '0')
-		{
-			total = total << 1;
-		}
+			result = result << 1;
 		else if (ch == '1')
-		{
-			total = (total << 1) | 1;
-		}
+			result = (result << 1) | 1;
 		else
-		{
 			return (0);
-		}
 	}
-	return (total);
-
+	return (result);
+}
